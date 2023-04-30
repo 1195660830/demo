@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <canvas height="500px" width="500px" id="MyCanvas"></canvas>
+        <script>
+            const canvas = document.getElementById("MyCanvas");
+            const ctx = canvas.getContext("2d");
+
+            const startTime = performance.now();
+
+            for (let i = 0; i < 1000; i++) {
+                ctx.fillStyle = "red";
+                ctx.fillRect(Math.random() * 500, Math.random() * 500, 10, 10);
+            }
+
+            const endTime = performance.now();
+            const renderTime = endTime - startTime;
+            console.log(`Canvas render time: ${renderTime} ms`);
+        </script> -->
+        <div id="BoxContainer"></div>
+        <script>
+            const container = document.getElementById("BoxContainer");
+
+            const startTime = performance.now();
+
+            for (let i = 0; i < 1000; i++) {
+                const square = document.createElement("div");
+                square.style.width = "10px";
+                square.style.height = "10px";
+                square.style.background = "red";
+                square.style.position = "absolute";
+                square.style.left = Math.random() * 500 + "px";
+                square.style.top = Math.random() * 500 + "px";
+                container.appendChild(square);
+            }
+
+            const endTime = performance.now();
+            const renderTime = endTime - startTime;
+            console.log(`DOM render time: ${renderTime} ms`);
+        </script>
+    </body>
+</html>
